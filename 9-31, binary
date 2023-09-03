@@ -1,0 +1,46 @@
+#Binary Lecture
+'''
+Base 10 - (0 - 9)
+000
+001
+002
+003
+004
+005
+006
+007
+008
+009
+010
+...
+019
+020
+...
+099
+100
+...
+123.5 = 1*10^2 + 2*10^1 + 3*10^0 + 5*10^-1
+
+Binary is Base 2 - 2 symbols 0,1
+000 - 0
+001 - 1
+010 - 2
+011 - 3
+100 - 4
+101 - 5 = 1*2^2 + 0*2^1 + 1*2^0
+110 - 6
+111 - 7
+
+5 / 2 = 2r1
+2 / 2 = 1r0
+1 / 2 = 0r1
+
+a lot of older programs use floor division as a default
+
+F-string
+print(f'2 = {2:b}')
+#prints number in binary (101)
+
+print(f'5 = {5:03d}')
+#prints number with certain amount of place values (005)
+'''
