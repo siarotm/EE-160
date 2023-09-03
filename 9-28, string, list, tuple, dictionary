@@ -1,0 +1,35 @@
+'''
+#types
+#strings | int | float
+#strings
+greeting = 'hello world!'
+print(greeting)
+print(greeting[0])
+print(greeting[1])
+#spaces included when indexing string
+print(greeting[0:5])
+
+#lists
+lst = [1, 2, 3, 4]
+print(lst)
+print(lst[0])
+print(lst[3])
+#in a list for python, can mix strings and numbers and others
+print(lst[-1])
+#prints the last value in the list, -2 is second to last, etc.
+lst[1] = 100
+print(lst)
+
+#tuple
+z=(1, 2)
+print(z)
+print(z[0])
+#can't change or reassign any values by indexing, so like a string
+#note can overwrite the existing tuple with another one
+
+#dictionary
+dct = {"0": 1, "1":2, "2": 3}
+grades = {"chris": 70.9, "david":99.0, "emily": 86.5}
+print(grades["chris"])
+#will print 70.9
+'''
