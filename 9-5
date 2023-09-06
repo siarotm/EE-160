@@ -1,0 +1,110 @@
+#Boolean Equations (Conditional Math)
+# True and False 
+'''
+> Greater than
+< Less than
+>= Greater than/equal to
+<= Less than/equal to
+== equal
+!= not equal to
+
+
+#should return True
+print(10 >= 5)
+
+x = 15
+y = 150
+
+print(x >= y)
+#should return False
+
+'''
+#Branching if (if, if/else, if/elif/else)
+#keyword is if
+#code is separated by blocks using tabs
+
+''' Form of an if/else
+if (condition):
+    run code here if condition is true
+    continue code
+    end code
+else:
+    run code if condition is false
+    continue code
+    end else block
+#code continues here
+
+
+
+#Example 1
+#takes one integer from the user and display two different outputs depending on the integet entered
+#if the user's number is greater than 9000, the program should output 'Your number is very magical'
+#if the user's number is less than or equal to 9000, the program should output 'Your number needs more magic'
+
+#take integet input from user
+num = int(input('Enter your favorite number'))
+
+#if input is > 9000
+if(num > 9000):
+    #print magical
+    print('Your number is very magical')
+#otherwise
+else:
+    #print needs magic
+    print('Your number needs more magic')
+    
+#just to show that program moves on
+print('End of program')
+    
+#CP3
+    
+
+
+#elif
+#nested if/else
+
+color = input('enter red, green, or blue')
+if(color == 'red'):
+    print('the user entered red')
+else:
+    if color == 'green':
+        print('green')
+    else:
+        if (color == 'blue'):
+            print('blue')
+        else:
+            print('no')
+
+
+color = input('enter red, green, or blue')
+if(color == 'red'):
+    print('the user entered red')
+elif color == 'green':
+    print('green')
+elif (color == 'blue'):
+    print('blue')
+else:
+    print('no')
+    
+'''
+'''
+and / or are keywords
+
+and truth table
+false and false = false
+false and true = false
+true and false = false
+true and true = true
+    
+or truth table
+false or false = false
+false or true = true
+true or false = true
+true or true = true
+'''
+
+num = 10
+if (num > 5) and (num == 10)):
+    print ('true')
+else: 
+    print('false')
