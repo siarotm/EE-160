@@ -1,0 +1,116 @@
+'''
+score1 = float(input())
+score2 = float(input())
+score3 = float(input())
+score4 = float(input())
+score5 = float(input())
+
+lowest = min(score1, score2, score3, score4, score5)
+average = ((score1 + score2 + score3 + score4 + score5) / 5)
+highest = max(score1, score2, score3, score4, score5)
+
+print(f'Lowest: {lowest:.2f}')
+print(f'Average: {average:.2f}')
+print(f'Highest: {highest:.2f}')
+
+USING LISTS IS MORE EFFECIENT
+'''
+'''
+score = []
+score.append(float(input())
+score.append(float(input())
+score.append(float(input())
+score.append(float(input())
+score.append(float(input())
+
+print('lowest', min(score))
+print('average', sum(score) / len(score))
+print('highest', max(score))
+'''
+'''
+num1 = float(input())
+minScore = num1
+maxScore = num1
+sumScore = num1
+
+num2 = float(input())
+if(num2 < minScore):
+    minScore = num2
+if(num2 > maxScore):
+    maxScore = num2
+
+num3 = float(input())
+if(num3 < minScore):
+    minScore = num3
+if(num3 > maxScore):
+    maxScore = num3
+
+num4 = float(input())
+if(num4 < minScore):
+    minScore = num4
+if(num4 > maxScore):
+    maxScore = num4
+    
+num5 = float(input())
+if(num5 < minScore):
+    minScore = num5
+if(num5 > maxScore):
+    maxScore = num5
+
+sumScore = sumScore + num5
+
+print(minScore, maxScore, sumScore / 5)
+'''
+
+'''
+4 parts to a while loop
+
+1. condition variable initialization
+2. condition itself
+3. while loop body
+    4. condition update
+
+general form of a while loop
+
+cond_var = 0 #condition variable initialization
+while <condition>:
+    # while loop bod - everything that is tabbed in
+    # the code runs from top to bottom
+    # at bottom, condition is checked
+    # the while ends only if the condition is false
+    
+    # somewhere in the while loop
+    # a condition update must be present
+    
+#example
+i = 0 # 1.  i is a condition variable that is initialized to 0
+#while is a keyword that starts a while loop
+
+while i < 3: # (i < 3) 2
+    # everything between start and end is the 3. while loop body
+    # start
+    print(i)
+    i = i + 1 # 4. the condition update
+    #end
+#program continues
+
+    
+score = []
+count = 0
+while count < 5:
+    score.append(float(input()))
+    count = count + 1 # or can use count += 1 (faster)
+if len(scores) == 0
+    print('nothing was entered')
+else:
+    print(max(scores), min(scores), sum(scores) / len(scores))
+
+
+i = 0
+while i < 3:
+    j = 0
+    while j < 3:
+        print(i,j)
+        j=j+1
+    i=i+1
+'''
