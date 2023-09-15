@@ -1,0 +1,54 @@
+#CP 7
+
+num = int(input())
+
+count = 0
+total = 0
+
+while num != -999:
+    total += num
+    count += 1
+    num = int(input())
+if count == 0:
+    print('The average of 0 numbers is 0')
+else:
+    print(f'The average of {count} numbers is {total/count:.2f}')
+
+
+cont = 'yes'
+while cont: == 'yes':
+    #####
+    #####
+    #####
+    num = int(input())
+
+    count = 0
+    total = 0
+
+    while num != -999:
+        total += num
+        count += 1
+        num = int(input())
+    if count == 0:
+        print('The average of 0 numbers is 0')
+    else:
+        print(f'The average of {count} numbers is {total/count:.2f}')
+    #####
+    #####
+    #####
+    count = input('Do you want to continue ("yes/no")')
+    #right now the while loop goes if the user puts yes, but if 
+    #they put anything else (not neccesarily no), loop ends
+
+
+fruits = ['orange', 'apple', 'banana', 'mango']
+for fruit in fruits:
+    print(fruit)
+    
+for i in range(len(fruits)):
+    print(fruits[i])
+    
+print(list(enumerate(fruits)))
+
+for (index, fruit) in enumerate(fruits):
+    print(index, fruit)
