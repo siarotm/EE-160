@@ -1,0 +1,122 @@
+'''
+CP 9
+#get two integers
+int1 = int(input())
+int2 = int(input())
+
+#while loop as long as int1 and int2 are both not 0
+while int1 != 0 and int2 != 0:
+    #if int1 is greater than or equal to int2, don't enter if statement
+    if int1 >= int2:
+        #print int1 - int2 = quotient
+        print(f'{int1} - {int2} = {int1 - int2}')
+    #get new integers
+    int1 = int(input())
+    int2 = int(input())
+
+#after while loop ends (entered 0,0) print "Program Ended"
+print("Program Ended")
+'''
+
+#line 8, can also do 
+#while(not(num1==0 and num2==0))
+
+
+#Functions
+
+#functions behave similarly to mathematical functions
+
+#f(x) = x^2
+'''
+find
+f(2) = 4
+f(3) = 9
+f(5) = 25
+'''
+
+'''
+#fun(x) = x^2
+#python conversion
+def fun(x):
+    result = x**2
+    return result
+
+print('starting')
+print(fun(2))
+print(fun(3))
+five_squared = fun(5)
+print(five_squared)
+num = int(input())
+print(fun(num))
+'''
+
+'''
+def Rect_Area(side1, side2):
+    return side1 * side2
+    
+def Rect_Perim(side1, side2):
+    return (2 * side1 + 2 * side2)
+
+if __name__ == "__main__":
+    side1 = 5
+    side2 = 10
+    x = Rect_Area(side1, side2)
+    # should return 50
+    side3 = 3
+    y = Rect_Perim(side1, side3)
+    #should return 16
+    print(x, y)
+'''
+
+'''
+def CP7():
+    #initialize some variables
+    total = 0
+    count = 0
+    # Get the 1st integer user
+    num = int(input())
+    # while the entered number is not -999
+    while num != -999:
+        #accumulate the sum of all numbers
+        total += num # total = total + num
+        #keep count of all numbers
+        count += 1 # count = count + 1
+        #update the condition - get a new integer
+        num = int(input())
+    # check how numbers were entered
+    if count == 0:
+        print('The average of 0 numbers is 0')
+    else:
+        print(f'The average of {count} numbers is {total/count: .2f}')
+
+
+#CP8
+cont = 'yes'
+while cont == 'yes':
+    CP7()
+    cont = input()
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
