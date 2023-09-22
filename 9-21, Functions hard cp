@@ -1,0 +1,208 @@
+'''
+email = input()
+valid = False
+
+while valid == False:
+    valid = True
+    if valid == True:
+        if '=' in email:
+            valid = False
+    if valid == True:
+        if '!' in email:
+            valid = False
+    if valid == True:
+        countAt = 0
+        for x in email:
+            if x == '@':
+                countAt += 1
+        if countAt == 0 or countAt > 1:
+            valid = False
+    if valid == True:
+        if email[0] == '@':
+            valid = False
+    if valid == True:
+        if email[-4] != '.' or email[-3] != 'c' or email[-2] != 'o' or email[-1] != 'm':
+            valid = False
+    if valid == False:
+        print('Invalid Email')
+        email = input()
+
+print('Valid Email')
+'''
+
+
+'''
+#CP 10
+
+# get a string (email) from the user
+email = input()
+# assume the invalid
+isInvalid = True
+# while the email is invalid
+while isInvalid:
+    # use variable called check - initalize to true
+    didPass = True
+    
+    #Check if it contains '!'
+    if '!' in email:
+        didPass = False
+    #print('!', didPass)
+    # if check is still true 
+    if didPass:
+        # Check if it contains '='
+        if '=' in email:
+            didPass = False
+    #print('=', didPass)    
+    # if check is still true 
+    if didPass:
+        # Check to make sure there is only 1 '@'
+        # loop through the email and keep count of how many '@' symbols there are
+        at_count=0
+        for c in email:
+            if c == '@':
+                at_count += 1 # at_count = at_count + 1
+        if at_count == 0 or at_count > 1:
+            didPass = False
+    #print('@', didPass)
+    # if check is still true
+    if didPass:    
+        # Check to make sure that '@' is not the first character
+        if email[0] == '@':
+            didPass = False
+    #print('@', didPass)
+    # if check is still true
+    if didPass:
+        # Check to the last 4 characters are '.com'
+        if email[-4] != '.' or email[-3] != 'c' or email[-2] != 'o' or email[-1] != 'm':
+            didPass = False
+    #print('.com', didPass)
+    #if check is true
+    if didPass:
+        #email is valid - update the condition
+        isInvalid = False
+    #otherwise
+    else:
+        # print invalid
+        print('Invaid Email')
+        #email is invalid - ask for new email
+        email = input()
+        
+# print valid email
+print('Valid Email')
+'''
+'''
+def IsEmailValid(email):
+    # use variable called check - initalize to true
+    didPass = True
+    
+    #Check if it contains '!'
+    if '!' in email:
+        didPass = False
+    #print('!', didPass)
+    # if check is still true 
+    if didPass:
+        # Check if it contains '='
+        if '=' in email:
+            didPass = False
+    #print('=', didPass)    
+    # if check is still true 
+    if didPass:
+        # Check to make sure there is only 1 '@'
+        # loop through the email and keep count of how many '@' symbols there are
+        at_count=0
+        for c in email:
+            if c == '@':
+                at_count += 1 # at_count = at_count + 1
+        if at_count == 0 or at_count > 1:
+            didPass = False
+    #print('@', didPass)
+    # if check is still true
+    if didPass:    
+        # Check to make sure that '@' is not the first character
+        if email[0] == '@':
+            didPass = False
+    #print('@', didPass)
+    # if check is still true
+    if didPass:
+        # Check to the last 4 characters are '.com'
+        if email[-4] != '.' or email[-3] != 'c' or email[-2] != 'o' or email[-1] != 'm':
+            didPass = False
+    #print('.com', didPass)
+    return didPass
+
+
+
+# get a string (email) from the user
+email_input = input()
+# assume the invalid
+isInvalid = True
+# while the email is invalid
+while isInvalid:
+    didPass = IsEmailValid(email_input)
+    if didPass:
+        #email is valid - update the condition
+        isInvalid = False
+    #otherwise
+    else:
+        # print invalid
+        print('Invaid Email')
+        #email is invalid - ask for new email
+        email = input()
+        
+# print valid email
+print('Valid Email')
+
+'''
+
+
+# build a function that takes in a string and returns all indexes of a given character as a list
+# use the folling prototype
+'''
+def FindCharacterIndexes(strinput: str , char: str) -> list:
+Example Function Call:
+FindCharacterIndexes('Hello my name is Chris!', 'e')
+
+Example return value:
+[1, 12]
+'''
+
+'''
+def FindCharacterIndexes(strinput: str , char: str) -> list:
+    result = []
+    for i in range(len(strinput)):
+        if strinput[i] == char:
+            result.append(i)
+    return result
+if __name__ == 'builtins':    
+    print(FindCharacterIndexes('Hello my name is Chris!', 'e'))
+    print(FindCharacterIndexes('eeeeeeeeeeeeeeeeeeeeeeeeee', 'e'))
+
+'''
+
+
+'''
+Build a function that takes a dictionary that contains exam scores (float) as values in the dictionary.
+The function should return the average of all scores
+
+def CalcAverageScore(scores: dict ) -> float:
+
+Example Function Call:
+CalcAverageScore({'chris': 72.5, 'david': 85.3, 'emily': 97.4})
+
+Example Function Return:
+#the average of 72.5, 85.3, 97.4
+
+'''
+
+def CalcAverageScore(scores: dict ) -> float:
+    count = 0
+    total = 0
+    for key in scores:
+        total += scores[key]
+        count += 1
+    return total/count
+    
+
+if __name__ == 'builtins':
+    print(CalcAverageScore({'chris': 72.5, 'david': 85.3, 'emily': 97.4}))
+
