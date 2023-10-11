@@ -1,0 +1,57 @@
+#split() function
+#this function splits strings on a delimeter(Default: space)
+
+#print() function
+
+
+'''
+str = 'Hello World! I have some experience programming now.'
+x = str.split()
+print(str)
+print(x)
+should print a list, each element each word (seperated by spaces)
+
+print(str.split('e'))
+this will print in a list, each element until an 'e' is reached (not including the 'e')
+
+'''
+
+#build a program that asks the user for any amount of integers on a single line delimited by spaces
+#the program should output the average
+
+data = input().split()
+
+#to convert the strings to integers, use a for loop
+'''
+ints = []
+for num in data:
+    ints.append(int(num))
+
+for i in range(lend(data)):
+    data[i] - int(data[i])
+
+#list comprehension
+ints = [int(x) for x in data]
+
+#x = list(range(0,10000))
+
+print(sum(ints)/len(ints))
+'''
+#build a program that asks the user for any amount of integers on a single line delimited by commas or newlines(enter).
+#the very last line of data must be the word 'end'
+#the program should output the average
+
+data = []
+line = input()
+while line != 'end':
+    data += [int(x) for x in line.split(',')]
+    '''
+    for x in line.split():
+        num = int(x)
+        data.append(num)
+    '''
+    line = input()
+print(sum(data)/len(data))
+    
+    
+    
