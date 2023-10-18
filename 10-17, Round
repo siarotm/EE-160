@@ -1,0 +1,69 @@
+'''
+CP 13
+
+count = int(input())
+
+for i in range(count):
+    data = [float(x) for x in input().split()]
+    
+   # equivalent to 
+    #d = input.split()
+    #data = []
+    #for x in d:
+        data.append(float(x))
+    
+    print(f'Highest: {max(data):.2f} , Lowest: {min(data):.2f}, Average: {sum(data)/len(data):.2f}')
+
+
+CP 14
+
+[r, c] = [int(x) for x in input().split()]
+
+
+#could also do
+#size = [int(x) for x in input().split()]
+#r = size[0]
+#c = size[1]
+
+
+count = 1
+for i in [int(x) for x in input().split()]:
+    if count % c != 0:
+        print(i, end=' ')
+    else:
+        print(f'{i} ')
+    count += 1
+
+'''
+
+def round2int(value):
+    str = f'{value:.0f}'
+    return #integer
+
+#if you want to round, can also use
+#str = f'{3.14159:.3f}
+#print(float(str))
+
+print(round2int(3.9))
+
+
+def round2int2(value):
+    #multiply the original number by 2
+    #subtract the int version of the number
+    #cast as an integer
+    r = value * 2
+    r = r - int(value)
+    r = int(r)
+    return r
+    
+'''
+we can represent matricies with nested lists
+each element in the main list is a row
+each element in the list above is an element in the row
+'''
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        print(matrix[i][j], end=' ')
+    print()
