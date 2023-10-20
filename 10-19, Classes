@@ -1,0 +1,69 @@
+'''
+#Classes
+
+class Rectangles:
+    #rectangles have properties and functions
+    #rectangles have height, width
+    #area, perimeter
+    #string representation
+    def __init__(self, w, h):
+        self.width = w
+        self.height = h
+    def__str__(self):
+        return f'This is a rectangle: width={self.width}, height={self.wheight, area={self.Area())'
+    
+    def Area(self):
+        return self.width * self.height
+
+r1 = Rectangle(2,3)
+r2 = Rectangle(4,5)
+
+a = r1.Area()
+print(a)
+#will print '6'
+
+print(r2.Area())
+#will print 20
+
+rectangles = [r1, r2]
+
+for shapes in rectangles:
+    print(shapes.Area())
+    
+print(r1)
+print(r2)
+#prints output from line 13
+
+
+
+'''
+
+class Rectangle:
+    def __init__(self, w, h , xpos, ypos): #__init__ runs as a constructor
+        self.width = w
+        self.height = h
+        self.pos=[xpos,ypos]
+    def __str__(self): # this function must return a string - can be used with print()
+        return f'This is a rectangle: width={self.width}, height={self.height}, Area={self.Area()}'
+    def Area(self):
+        return self.width * self.height
+    def DBOT(self,other):
+        return ((self.pos[0]-other.pos[0])**2+(self.pos[1]-other.pos[1])**2)**(1/2)
+    
+        
+r1 = Rectangle(2, 3, 0 , 5)
+r2 = Rectangle(4, 5, 5, 0)
+print(r1.pos)
+print(r2.pos)
+
+
+def distanceBetweenRect(ra, rb):
+    # calculate the distance
+    dist = ((r1.pos[0]-r2.pos[0])**2+(r1.pos[1]-r2.pos[1])**2)**(1/2)
+    return dist
+print(distanceBetweenRect(r1,r2))
+print(r1.DBOT(r2))
+
+
+
+
