@@ -1,0 +1,283 @@
+## CP 15
+'''
+def MaxHourGlass(nlist):
+    # calculates and returns the maximum hourglass sum
+    totalSums = []
+    # loop through all possible hourglasses
+    rows = len(nlist)
+    cols = len(nlist[0])
+    for i in range(rows-2):
+        for j in range(cols-2):
+            #calculate sum and store
+            totalSums.append(nlist[i][j] + nlist[i][j+1] + nlist[i][j+2] +
+                                           nlist[i+1][j+1] +
+                             nlist[i+2][j] + nlist[i+2][j+1] + nlist[i+2][j+2])
+    print(totalSums)
+    return max(totalSums)
+
+if __name__ == "builtins":
+    # debug to test the function
+    #matrix1=[[1,1,1,0,0],[0,1,0,0,0],[1,1,1,0,0]]
+    #print(MaxHourGlass(matrix1))
+    #read in matrix data
+    rows = int(input())
+    
+    #store data in a nested list
+    data = []
+    for i in range(rows):
+        data.append([int(x) for x in input().split()])
+    # call the MaxHourGlass function
+    print(MaxHourGlass(data))
+    
+'''
+
+
+
+'''
+class Rectangle:
+    def __init__(self, w, h , xpos, ypos): #__init__ runs as a constructor
+        self.width = w
+        self.height = h
+        self.pos=[xpos,ypos]
+    def __str__(self): # this function must return a string - can be used with print()
+        return f'This is a rectangle: width={self.width}, height={self.height}, Area={self.Area()}'
+    def Area(self):
+        return self.width * self.height
+    def DBOR(self, other):
+        if (isinstance(other, Rectangle)):
+            return ((self.pos[0]-other.pos[0])**2+(self.pos[1]-other.pos[1])**2)**(1/2)
+        else:
+            print('error, DBOR only works between 2 rectangles')
+    def __add__(self, other):
+        #print('in add function:', self.__str__())
+        #print(isinstance(other,Rectangle))\
+        if isinstance(other, Rectangle):
+            #return self.Area() + other.Area()
+            r = Rectangle(self.width, other.height, other.pos[0], self.pos[1])
+            return r
+r1 = Rectangle(2, 3, 0 , 5)
+r2 = Rectangle(4, 5, 5, 0)
+print(r1.DBOR(r2))
+print(r1.DBOR(5))
+result=r1+r2
+print(type(result), result, result.pos)
+
+
+
+#print(isinstance(5, int))
+#print(isinstance(3.14,int))
+'''
+'''
+class Matrix:
+    def __init__(self):
+        pass
+    def GetData(self):
+        print('Enter Matrix Data')
+        rows = int(input())
+        self.rowCount = rows
+        #store data in a nested list
+        self.data = []
+        for i in range(rows):
+            self.data.append([int(x) for x in input().split()])
+        self.colCount = len(self.data[0])
+    def __sub__(self, other):
+        if isinstance(other, int):
+            #subtract all values by other
+            # return the correct matrix
+            pass
+            
+        if isinstance(other, Matrix):
+            #element by element subtraction
+            if self.rowCount != other.rowCount or self.colCount != other.colCount:
+                print('Error: Matrices must be the same size for Subtraction')
+            else:
+                data = []
+                for i in range(self.rowCount):
+                    row=[]
+                    for j in range(self.colCount):
+                        row.append(self.data[i][j] - other.data[i][j])
+                    data.append(row)
+                m = Matrix()
+                m.data = data
+                m.rowCount = self.rowCount
+                m.colCount = self.colCount
+                return m
+m1 = Matrix()
+m1.GetData()
+m2 = Matrix()
+m2.GetData()
+m3 = m1 - m2
+print(m3)
+print(type(m3))
+print(m3.data)
+
+'''
+
+
+
+### New Lecture
+'''
+class Matrix:
+    def __init__(self):
+        pass
+    def GetData(self):
+        print('Enter Matrix Data')
+        rows = int(input())
+        self.rowCount = rows
+        #store data in a nested list
+        self.data = []
+        for i in range(rows):
+            self.data.append([int(x) for x in input().split()])
+        self.colCount = len(self.data[0])
+    def __str__(self):
+        #returns a string you want to use with print
+        datastring =''
+        for i in range(self.rowCount):
+            for j in range(self.colCount):
+                if j == self.colCount - 1:
+                    datastring += str(self.data[i][j])+'\n'
+                else:
+                    datastring += str(self.data[i][j])+'\t'
+        return datastring
+    def __sub__(self, other):
+        if isinstance(other, int):
+            #subtract all values by other
+            # return the correct matrix
+            data = []
+            for i in range(self.rowCount):
+                row=[]
+                for j in range(self.colCount):
+                    row.append(self.data[i][j] - other)
+                    data.append(row)
+            m = Matrix()
+            m.data = data
+            m.rowCount = self.rowCount
+            m.colCount = self.colCount
+            return m
+        if isinstance(other, Matrix):
+            #element by element subtraction
+            if self.rowCount != other.rowCount or self.colCount != other.colCount:
+                print('Error: Matrices must be the same size for Subtraction')
+            else:
+                data = []
+                for i in range(self.rowCount):
+                    row=[]
+                    for j in range(self.colCount):
+                        row.append(self.data[i][j] - other.data[i][j])
+                    data.append(row)
+                m = Matrix()
+                m.data = data
+                m.rowCount = self.rowCount
+                m.colCount = self.colCount
+                return m
+m1 = Matrix()
+m1.GetData()
+m2 = Matrix()
+m2.GetData()
+print('matrix 1:')
+print(m1)
+print('matrix 2:')
+print(m2)
+
+m3 = m1 - m2
+print(m3)
+print(type(m3))
+print(m3.data)
+
+m4 = m1 - 5
+print(m4)
+'''
+
+
+
+
+# example of inheritance
+# there are two shapes rectangle and triangle.
+# the constructor should take a position
+# each shape should have an area function.
+# each shape should have a function to move 1 unit to the right, left, up, or down on a 2D x,y axis
+
+class Shape:
+    def Move(self, direction):
+        print('move', direction)
+        if dir == 'up':
+            #move up 1 unit
+            pass
+        elif dir == 'right':
+            pass
+        
+class Rectangle(Shape):
+    def __init__(self, width, height, posx, posy):
+        self.width = width
+        self.height = height
+        self.posx = posx
+        self.posy = posy
+    def Area(self):
+        return self.width * self.height
+class Triangle(Shape):
+    def __init__(self, base, height, posx, posy):
+        self.base = base
+        self.height = height
+        self.posx = posx
+        self.posy = posy
+    def Area(self):
+        return (self.base * self.height)/2
+        
+r1 = Rectangle(3, 5, 100, 200)
+t1 = Triangle(4, 5, -100, 200)
+print(r1.Area())
+print(t1.Area())
+r1.Move('up')
+t1.Move('down')
+
+
+
+
+
+
+class tire
+class window
+class engine
+
+class car:
+    def __init__(self):
+        
+        self.e1 = engine()
+        self.w1 = window()
+        self.w2 = window()
+        self.w3 = window()
+        self.t1 = tire()
+        
+class moped:
+    
+
+
+
+
+'''
+## challenge
+## build a class for a circle
+## it should have the following:
+1. a constructor that take in the radius (float), pos(tuple(x,y))
+2. fill in the __str__() that will print the area and circumference of the circle
+3. A method named Area() that returns the area of the circle
+4. A method named Circ() that returns the circumference of the circle
+5. A method named Intersecting(). If the parameter passed to intersectin is another
+circle, the return True if the circles are overlapping, return False if the circles are not overlapping.
+If the parameter passed is not a circle, return None
+6. Override the addition operator. Adding 2 circles should return the sum of their areas.
+Adding a circle with an integer means the radius should increas by the integer passed.
+Any other object added to the Circle should return None.
+7. Override the subtraction operator. Subtracting 2 circles should return the distance between the two circles.
+If any other object is used with the subtraction operator, then the operation should return None.
+'''
+
+
+
+
+
+
+
+
+
+
